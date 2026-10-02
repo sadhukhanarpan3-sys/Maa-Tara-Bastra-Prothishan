@@ -5,43 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maa Tara Bastra Prothishan - Official Online Store</title>
     <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-color: #2874f0; /* Premium Brand Blue */
-            --secondary-color: #fb641b; /* Action Orange */
-            --accent-color: #ff9f00; /* Gold Highlight */
-            --dark-color: #212121;
-            --light-bg: #f1f3f6;
+            --primary-color: #d81b60; /* Dark Pink / Rose Theme */
+            --primary-hover: #ad1457;
+            --accent-color: #f48fb1;
+            --dark-color: #1a1a1a;
+            --light-bg: #fce4ec;
             --white: #ffffff;
-            --success-color: #388e3c;
-            --gray-text: #878787;
-            --border-color: #e0e0e0;
-            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --success-color: #2e7d32;
+            --gray-text: #666666;
+            --border-color: #f8bbd0;
+            --card-shadow: 0 8px 20px rgba(216, 27, 96, 0.12);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: var(--light-bg);
+            background-color: #fff5f8;
             color: var(--dark-color);
-            line-height: 1.5;
         }
 
         /* ===== HEADER & NAVBAR ===== */
         header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, #c2185b, #880e4f);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .top-navbar {
@@ -61,93 +60,88 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            letter-spacing: -0.5px;
         }
 
         .brand-logo span {
             color: var(--accent-color);
-            font-style: italic;
             font-weight: 800;
         }
 
         .search-bar {
             flex: 1;
-            max-width: 600px;
-            margin: 0 25px;
+            max-width: 550px;
+            margin: 0 20px;
             display: flex;
             background: var(--white);
-            border-radius: 6px;
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+            padding: 3px;
         }
 
         .search-bar input {
             width: 100%;
-            padding: 11px 16px;
+            padding: 10px 18px;
             border: none;
             outline: none;
             font-size: 14px;
         }
 
         .search-bar button {
-            background: var(--white);
+            background: var(--primary-color);
             border: none;
             padding: 0 20px;
-            color: var(--primary-color);
-            font-size: 16px;
+            color: var(--white);
+            border-radius: 20px;
             cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .search-bar button:hover {
-            color: var(--secondary-color);
         }
 
         .user-actions {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .nav-btn {
             background: transparent;
             color: var(--white);
             border: none;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             text-decoration: none;
         }
 
-        .cart-btn {
+        .login-btn-nav {
             background: var(--white);
             color: var(--primary-color);
-            padding: 8px 18px;
-            border-radius: 4px;
-            font-weight: 700;
-            transition: 0.3s;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-weight: 600;
         }
 
-        .cart-btn:hover {
-            background: #f8f9fa;
+        .cart-btn {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-weight: 700;
         }
 
         .cart-badge {
-            background: var(--secondary-color);
+            background: var(--primary-color);
             color: var(--white);
             padding: 2px 7px;
             border-radius: 50%;
-            font-size: 12px;
+            font-size: 11px;
         }
 
         /* ===== CATEGORIES BAR ===== */
         .categories-bar {
             background: var(--white);
             border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .categories-wrapper {
@@ -168,60 +162,37 @@
             align-items: center;
             gap: 8px;
             white-space: nowrap;
-            transition: 0.2s;
-        }
-
-        .category-item:hover {
-            color: var(--primary-color);
         }
 
         .category-item i {
             color: var(--primary-color);
-            font-size: 15px;
         }
 
         /* ===== HERO BANNER ===== */
         .hero-banner {
             max-width: 1350px;
             margin: 20px auto;
-            background: linear-gradient(135deg, #0d47a1, #1976d2, #42a5f5);
-            border-radius: 10px;
-            padding: 50px 40px;
+            background: linear-gradient(135deg, #880e4f, #d81b60, #f48fb1);
+            border-radius: 12px;
+            padding: 40px;
             color: var(--white);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             box-shadow: var(--card-shadow);
         }
 
         .hero-content h1 {
-            font-size: 38px;
-            font-weight: 800;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-
-        .hero-content p {
-            font-size: 18px;
-            margin-bottom: 25px;
-            opacity: 0.9;
+            font-size: 36px;
+            margin-bottom: 10px;
         }
 
         .btn-primary {
-            background: var(--secondary-color);
-            color: var(--white);
-            padding: 12px 30px;
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 10px 24px;
             text-decoration: none;
             font-weight: 700;
-            border-radius: 4px;
+            border-radius: 25px;
             display: inline-block;
-            transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(251, 100, 27, 0.3);
-        }
-
-        .btn-primary:hover {
-            background: #e65100;
-            transform: translateY(-2px);
+            margin-top: 15px;
         }
 
         /* ===== PRODUCT SECTION ===== */
@@ -233,17 +204,9 @@
 
         .section-header {
             background: var(--white);
-            padding: 18px 24px;
+            padding: 16px 20px;
             border-radius: 8px 8px 0 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .section-header h2 {
-            font-size: 20px;
-            font-weight: 700;
+            border-bottom: 2px solid var(--light-bg);
         }
 
         .products-grid {
@@ -251,238 +214,204 @@
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 20px;
             background: var(--white);
-            padding: 24px;
+            padding: 20px;
             border-radius: 0 0 8px 8px;
         }
 
         /* ===== PRODUCT CARD ===== */
         .product-card {
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 16px;
+            border-radius: 10px;
+            padding: 14px;
             transition: 0.3s;
             background: var(--white);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            cursor: pointer;
             position: relative;
         }
 
         .product-card:hover {
             box-shadow: var(--card-shadow);
-            border-color: transparent;
             transform: translateY(-4px);
         }
 
         .badge {
             position: absolute;
-            top: 12px;
-            left: 12px;
-            background: var(--success-color);
+            top: 10px;
+            left: 10px;
+            background: var(--primary-color);
             color: var(--white);
             font-size: 11px;
-            font-weight: 700;
-            padding: 4px 8px;
-            border-radius: 3px;
-            text-transform: uppercase;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
         }
 
         .product-image {
             width: 100%;
-            height: 230px;
+            height: 240px;
             object-fit: cover;
-            border-radius: 6px;
-            margin-bottom: 14px;
+            border-radius: 8px;
+            margin-bottom: 12px;
         }
 
         .product-title {
             font-size: 15px;
             font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--dark-color);
-            line-height: 1.3;
-            height: 40px;
-            overflow: hidden;
-        }
-
-        .rating-box {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 10px;
-        }
-
-        .rating-badge {
-            background: var(--success-color);
-            color: var(--white);
-            font-size: 12px;
-            font-weight: 700;
-            padding: 2px 6px;
-            border-radius: 3px;
-        }
-
-        .rating-count {
-            font-size: 12px;
-            color: var(--gray-text);
+            margin-bottom: 6px;
         }
 
         .price-container {
             display: flex;
             align-items: baseline;
-            gap: 10px;
-            margin-bottom: 14px;
+            gap: 8px;
+            margin-bottom: 10px;
         }
 
         .current-price {
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--dark-color);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-color);
         }
 
         .original-price {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--gray-text);
             text-decoration: line-through;
         }
 
-        .discount-percentage {
-            color: var(--success-color);
-            font-size: 13px;
-            font-weight: 700;
-        }
-
         .card-buttons {
             display: flex;
-            flex-direction: column;
             gap: 8px;
         }
 
-        .add-to-cart-btn {
-            background: var(--accent-color);
-            color: var(--dark-color);
+        .btn-card {
+            flex: 1;
+            padding: 8px;
             border: none;
-            padding: 10px;
-            border-radius: 4px;
-            font-weight: 700;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 12px;
             cursor: pointer;
-            transition: 0.2s;
+        }
+
+        .btn-add-cart {
+            background: var(--light-bg);
+            color: var(--primary-color);
+        }
+
+        .btn-buy-now {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* ===== MODALS (LOGIN & PRODUCT DETAIL) ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
         }
 
-        .add-to-cart-btn:hover {
-            background: #e69000;
+        .modal-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 450px;
+            width: 90%;
+            position: relative;
+            box-shadow: var(--card-shadow);
         }
 
-        .whatsapp-btn {
-            background: #25d366;
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--gray-text);
+        }
+
+        .modal-input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .modal-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary-color);
             color: var(--white);
             border: none;
-            padding: 10px;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: 700;
             cursor: pointer;
-            transition: 0.2s;
-            text-decoration: none;
-            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Product Detail Modal Specifics */
+        .product-modal-content {
+            max-width: 750px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            font-size: 13px;
+            gap: 20px;
         }
 
-        .whatsapp-btn:hover {
-            background: #1eb954;
+        .product-modal-img {
+            width: 50%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
-        /* ===== FOOTER ===== */
-        footer {
-            background: #172337;
-            color: var(--white);
-            padding: 50px 20px 20px;
-            margin-top: 50px;
+        .product-modal-details {
+            width: 50%;
         }
 
-        .footer-grid {
-            max-width: 1350px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h4 {
-            font-size: 14px;
-            color: var(--gray-text);
-            text-transform: uppercase;
-            margin-bottom: 16px;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-column ul li a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 13px;
-            transition: 0.2s;
-        }
-
-        .footer-column ul li a:hover {
-            color: var(--accent-color);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 25px;
-            border-top: 1px solid #283547;
-            font-size: 13px;
-            color: var(--gray-text);
-        }
-
-        /* Responsive Styles */
         @media (max-width: 768px) {
+            .product-modal-content {
+                flex-direction: column;
+            }
+            .product-modal-img, .product-modal-details {
+                width: 100%;
+            }
             .top-navbar {
                 flex-direction: column;
-                gap: 12px;
+                gap: 10px;
             }
             .search-bar {
                 width: 100%;
-                margin: 0;
-            }
-            .hero-banner {
-                padding: 30px 20px;
-            }
-            .hero-content h1 {
-                font-size: 26px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
         <div class="top-navbar">
             <a href="#" class="brand-logo">
-                <i class="fa-solid fa-bag-shopping"></i> MAA TARA <span>BASTRA PROTHISHAN</span>
+                <i class="fa-solid fa-gem"></i> MAA TARA <span>BASTRA PROTHISHAN</span>
             </a>
             
             <div class="search-bar">
-                <input type="text" placeholder="Search for Sarees, Kurtis, Menswear & more...">
+                <input type="text" placeholder="Search Sarees, Kurtis & Clothing...">
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
 
             <div class="user-actions">
-                <a href="#" class="nav-btn"><i class="fa-solid fa-user"></i> Login</a>
-                <button class="nav-btn cart-btn" onclick="openCart()">
+                <button class="nav-btn login-btn-nav" onclick="openLoginModal()">
+                    <i class="fa-solid fa-user"></i> Login / Register
+                </button>
+                <button class="nav-btn cart-btn" onclick="alert('Your Cart is empty!')">
                     <i class="fa-solid fa-cart-shopping"></i> Cart
                     <span class="cart-badge" id="cart-count">0</span>
                 </button>
@@ -490,174 +419,183 @@
         </div>
     </header>
 
-    <!-- Categories Bar -->
+    <!-- Categories -->
     <nav class="categories-bar">
         <div class="categories-wrapper">
-            <a href="#" class="category-item"><i class="fa-solid fa-shirt"></i> Saree Collection</a>
-            <a href="#" class="category-item"><i class="fa-solid fa-person-dress"></i> Kurtis & Lehengas</a>
-            <a href="#" class="category-item"><i class="fa-solid fa-user-tie"></i> Menswear</a>
-            <a href="#" class="category-item"><i class="fa-solid fa-child-dress"></i> Kids Clothing</a>
-            <a href="#" class="category-item"><i class="fa-solid fa-fire"></i> Festival Offers</a>
+            <a href="#" class="category-item"><i class="fa-solid fa-shirt"></i> Designer Sarees</a>
+            <a href="#" class="category-item"><i class="fa-solid fa-person-dress"></i> Banarasi Silk</a>
+            <a href="#" class="category-item"><i class="fa-solid fa-gem"></i> Partywear Kurtis</a>
+            <a href="#" class="category-item"><i class="fa-solid fa-child-dress"></i> Lehenga Collections</a>
+            <a href="#" class="category-item"><i class="fa-solid fa-fire"></i> Special Offers</a>
         </div>
     </nav>
 
     <!-- Hero Banner -->
     <div class="hero-banner">
         <div class="hero-content">
-            <h1>Exclusive Festive Clothing Collection</h1>
-            <p>Get premium quality traditional & modern wear at best discounted prices.</p>
-            <a href="#featured-products" class="btn-primary">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+            <h1>Exclusive Traditional Saree Collection</h1>
+            <p>Premium Quality & Pure Fabrics at Unbeatable Prices.</p>
+            <a href="#products" class="btn-primary">Explore Now <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </div>
 
-    <!-- Main Products Showcase -->
-    <div class="main-container" id="featured-products">
+    <!-- Main Products Section -->
+    <div class="main-container" id="products">
         <div class="section-header">
-            <h2>🔥 Trending Collections</h2>
-            <a href="#" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 14px;">View All</a>
+            <h2>🌸 Featured Saree Collection</h2>
         </div>
 
         <div class="products-grid">
 
             <!-- Product 1 -->
-            <div class="product-card">
-                <span class="badge">Best Seller</span>
-                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=500&q=80" alt="Saree" class="product-image">
-                <div class="product-title">Royal Designer Banarasi Silk Saree (Blue)</div>
-                <div class="rating-box">
-                    <span class="rating-badge">4.8 <i class="fa-solid fa-star"></i></span>
-                    <span class="rating-count">(1,240 Ratings)</span>
-                </div>
+            <div class="product-card" onclick="openProductDetail('Royal Banarasi Silk Saree', '₹2,499', '₹4,999', 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=500&q=80', 'Pure Kanjivaram & Banarasi Silk Blend with Gold Zari Work. Perfect for weddings and grand festivals.')">
+                <span class="badge">BESTSELLER</span>
+                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=500&q=80" class="product-image">
+                <div class="product-title">Royal Banarasi Silk Saree</div>
                 <div class="price-container">
                     <span class="current-price">₹2,499</span>
                     <span class="original-price">₹4,999</span>
-                    <span class="discount-percentage">50% OFF</span>
                 </div>
                 <div class="card-buttons">
-                    <button class="add-to-cart-btn" onclick="addToCart('Banarasi Silk Saree')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-                    <a href="https://wa.me/?text=Hi,%20I%20want%20to%20buy%20Royal%20Designer%20Banarasi%20Silk%20Saree" target="_blank" class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+                    <button class="btn-card btn-add-cart" onclick="event.stopPropagation(); addToCart('Banarasi Saree')">Add To Cart</button>
+                    <button class="btn-card btn-buy-now" onclick="event.stopPropagation(); buyNow('Banarasi Saree')">Buy Now</button>
                 </div>
             </div>
 
             <!-- Product 2 -->
-            <div class="product-card">
-                <span class="badge">New Arrival</span>
-                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80" alt="Kurti" class="product-image">
-                <div class="product-title">Premium Printed Cotton Anarkali Kurti</div>
-                <div class="rating-box">
-                    <span class="rating-badge">4.5 <i class="fa-solid fa-star"></i></span>
-                    <span class="rating-count">(850 Ratings)</span>
-                </div>
+            <div class="product-card" onclick="openProductDetail('Designer Georgette Saree', '₹1,299', '₹2,599', 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80', 'Lightweight Premium Printed Georgette Saree with Designer Blouse Piece included.')">
+                <span class="badge">NEW</span>
+                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80" class="product-image">
+                <div class="product-title">Designer Georgette Saree</div>
                 <div class="price-container">
-                    <span class="current-price">₹899</span>
-                    <span class="original-price">₹1,799</span>
-                    <span class="discount-percentage">50% OFF</span>
+                    <span class="current-price">₹1,299</span>
+                    <span class="original-price">₹2,599</span>
                 </div>
                 <div class="card-buttons">
-                    <button class="add-to-cart-btn" onclick="addToCart('Cotton Anarkali Kurti')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-                    <a href="https://wa.me/?text=Hi,%20I%20want%20to%20buy%20Cotton%20Anarkali%20Kurti" target="_blank" class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+                    <button class="btn-card btn-add-cart" onclick="event.stopPropagation(); addToCart('Georgette Saree')">Add To Cart</button>
+                    <button class="btn-card btn-buy-now" onclick="event.stopPropagation(); buyNow('Georgette Saree')">Buy Now</button>
                 </div>
             </div>
 
             <!-- Product 3 -->
-            <div class="product-card">
-                <span class="badge">Trending</span>
-                <img src="https://images.unsplash.com/photo-1597983073493-88cd35cf03b0?auto=format&fit=crop&w=500&q=80" alt="Menswear" class="product-image">
-                <div class="product-title">Traditional Cotton Kurta Pajama Set</div>
-                <div class="rating-box">
-                    <span class="rating-badge">4.7 <i class="fa-solid fa-star"></i></span>
-                    <span class="rating-count">(530 Ratings)</span>
-                </div>
+            <div class="product-card" onclick="openProductDetail('Traditional Handloom Cotton Saree', '₹999', '₹1,999', 'https://images.unsplash.com/photo-1597983073493-88cd35cf03b0?auto=format&fit=crop&w=500&q=80', '100% Pure Soft Cotton Handloom Saree for everyday comfort & elegant Bengali traditional look.')">
+                <span class="badge">POPULAR</span>
+                <img src="https://images.unsplash.com/photo-1597983073493-88cd35cf03b0?auto=format&fit=crop&w=500&q=80" class="product-image">
+                <div class="product-title">Traditional Handloom Cotton Saree</div>
                 <div class="price-container">
-                    <span class="current-price">₹1,299</span>
-                    <span class="original-price">₹2,499</span>
-                    <span class="discount-percentage">47% OFF</span>
+                    <span class="current-price">₹999</span>
+                    <span class="original-price">₹1,999</span>
                 </div>
                 <div class="card-buttons">
-                    <button class="add-to-cart-btn" onclick="addToCart('Kurta Pajama Set')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-                    <a href="https://wa.me/?text=Hi,%20I%20want%20to%20buy%20Kurta%20Pajama%20Set" target="_blank" class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+                    <button class="btn-card btn-add-cart" onclick="event.stopPropagation(); addToCart('Cotton Saree')">Add To Cart</button>
+                    <button class="btn-card btn-buy-now" onclick="event.stopPropagation(); buyNow('Cotton Saree')">Buy Now</button>
                 </div>
             </div>
 
             <!-- Product 4 -->
-            <div class="product-card">
-                <span class="badge">Special Offer</span>
-                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80" alt="Lehenga" class="product-image">
-                <div class="product-title">Partywear Embroidered Lehenga Choli</div>
-                <div class="rating-box">
-                    <span class="rating-badge">4.9 <i class="fa-solid fa-star"></i></span>
-                    <span class="rating-count">(2,100 Ratings)</span>
-                </div>
+            <div class="product-card" onclick="openProductDetail('Heavy Embroidered Bridal Lehenga', '₹4,999', '₹9,999', 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80', 'Heavy Zardozi & Sequel Embroidery Bridal Velvet Lehenga Set with Dupatta.')">
+                <span class="badge">BRIDAL</span>
+                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80" class="product-image">
+                <div class="product-title">Heavy Embroidered Bridal Lehenga</div>
                 <div class="price-container">
-                    <span class="current-price">₹3,999</span>
-                    <span class="original-price">₹7,999</span>
-                    <span class="discount-percentage">50% OFF</span>
+                    <span class="current-price">₹4,999</span>
+                    <span class="original-price">₹9,999</span>
                 </div>
                 <div class="card-buttons">
-                    <button class="add-to-cart-btn" onclick="addToCart('Lehenga Choli')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-                    <a href="https://wa.me/?text=Hi,%20I%20want%20to%20buy%20Lehenga%20Choli" target="_blank" class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+                    <button class="btn-card btn-add-cart" onclick="event.stopPropagation(); addToCart('Bridal Lehenga')">Add To Cart</button>
+                    <button class="btn-card btn-buy-now" onclick="event.stopPropagation(); buyNow('Bridal Lehenga')">Buy Now</button>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-column">
-                <h4>ABOUT</h4>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Store Location</a></li>
-                </ul>
+    <!-- OTP LOGIN MODAL -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeLoginModal()">&times;</span>
+            <h3 style="margin-bottom: 15px; color: var(--primary-color);">Login / Register</h3>
+            <div id="phoneStep">
+                <p style="font-size: 13px; margin-bottom: 10px;">Enter your Mobile Number to receive OTP</p>
+                <input type="text" id="userPhone" placeholder="Enter Mobile Number (+91)" class="modal-input">
+                <button class="modal-btn" onclick="sendOTP()">Send OTP</button>
             </div>
-            <div class="footer-column">
-                <h4>HELP</h4>
-                <ul>
-                    <li><a href="#">Payments</a></li>
-                    <li><a href="#">Shipping</a></li>
-                    <li><a href="#">Cancellation & Returns</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>POLICY</h4>
-                <ul>
-                    <li><a href="#">Return Policy</a></li>
-                    <li><a href="#">Terms Of Use</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>CONNECT WITH US</h4>
-                <ul>
-                    <li><a href="#">WhatsApp Support</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                </ul>
+            <div id="otpStep" style="display: none;">
+                <p style="font-size: 13px; margin-bottom: 10px;">Enter 4-digit OTP sent to your phone</p>
+                <input type="text" id="userOTP" placeholder="Enter OTP (e.g. 1234)" class="modal-input">
+                <button class="modal-btn" onclick="verifyOTP()">Verify & Login</button>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Maa Tara Bastra Prothishan. All Rights Reserved.</p>
-        </div>
-    </footer>
+    </div>
 
-    <!-- Interactive Script -->
+    <!-- PRODUCT DETAIL VIEW MODAL -->
+    <div class="modal" id="productModal">
+        <div class="modal-content product-modal-content">
+            <span class="close-modal" onclick="closeProductModal()">&times;</span>
+            <img id="detailImg" class="product-modal-img" src="">
+            <div class="product-modal-details">
+                <h2 id="detailTitle" style="font-size: 20px; margin-bottom: 10px;"></h2>
+                <div style="margin-bottom: 10px;">
+                    <span id="detailCurrentPrice" style="font-size: 22px; font-weight: 700; color: var(--primary-color);"></span>
+                    <span id="detailOriginalPrice" style="text-decoration: line-through; color: var(--gray-text); margin-left: 10px;"></span>
+                </div>
+                <p id="detailDesc" style="font-size: 13px; color: var(--gray-text); margin-bottom: 20px;"></p>
+                <button class="modal-btn" style="background: #25d366;" onclick="orderOnWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Order On WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
     <script>
         let cartCount = 0;
-        function addToCart(item) {
+        let selectedProduct = '';
+
+        function addToCart(name) {
             cartCount++;
             document.getElementById('cart-count').innerText = cartCount;
-            alert(item + ' has been added to your cart successfully!');
+            alert(name + ' added to Cart!');
         }
 
-        function openCart() {
-            if(cartCount === 0) {
-                alert('Your cart is empty. Add items to view cart.');
+        function buyNow(name) {
+            window.open('https://wa.me/?text=Hi,%20I%20want%20to%20buy%20' + encodeURIComponent(name), '_blank');
+        }
+
+        /* Login Modal Functions */
+        function openLoginModal() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+        function sendOTP() {
+            let phone = document.getElementById('userPhone').value;
+            if(phone.length >= 10) {
+                document.getElementById('phoneStep').style.display = 'none';
+                document.getElementById('otpStep').style.display = 'block';
             } else {
-                alert('You have ' + cartCount + ' item(s) in your cart.');
+                alert('Please enter a valid phone number!');
             }
+        }
+        function verifyOTP() {
+            alert('Login Successful!');
+            closeLoginModal();
+        }
+
+        /* Product Detail Modal Functions */
+        function openProductDetail(title, currentPrice, originalPrice, imgUrl, desc) {
+            selectedProduct = title;
+            document.getElementById('detailTitle').innerText = title;
+            document.getElementById('detailCurrentPrice').innerText = currentPrice;
+            document.getElementById('detailOriginalPrice').innerText = originalPrice;
+            document.getElementById('detailImg').src = imgUrl;
+            document.getElementById('detailDesc').innerText = desc;
+            document.getElementById('productModal').style.display = 'flex';
+        }
+        function closeProductModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+        function orderOnWhatsApp() {
+            window.open('https://wa.me/?text=Hi,%20I%20want%20to%20order%20' + encodeURIComponent(selectedProduct), '_blank');
         }
     </script>
 </body>
