@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multipurpose Pratishthan - Official Store</title>
+    <style>
+        :root {
+            --primary: #1A365D;
+            --accent: #2B6CB0;
+            --success: #2F855A;
+            --bg: #F7FAFC;
+            --text: #2D3748;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            padding-bottom: 60px;
+        }
+
+        /* Header Navigation */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .cart-icon {
+            background: var(--accent);
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+
+        .cart-icon:hover {
+            background: #3182CE;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        .notice-banner {
+            background: #EBF8FF;
+            border-left: 4px solid var(--accent);
+            padding: 12px 16px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: #2C5282;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            background: #EDF2F7;
+        }
+
+        .product-details {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .product-desc {
+            font-size: 0.88rem;
+            color: #718096;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+        }
+
+        .btn-disabled {
+            background: #A0AEC0;
+            cursor: not-allowed;
+        }
+
+        .badge-out {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #E53E3E;
+            color: white;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Modal Overlay */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-btn {
+            float: right;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #718096;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #CBD5E0;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .qr-section {
+            text-align: center;
+            background: #F7FAFC;
+            padding: 15px;
+            border: 1px dashed #CBD5E0;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .qr-section img {
+            max-width: 180px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Multipurpose Pratishthan</div>
+        <div class="cart-icon" onclick="openCart()">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="notice-banner">
+            🚚 <strong>Delivery Notice:</strong> We deliver across all locations in West Bengal via Online Payment & Cash on Delivery.
+        </div>
+
+        <h2 style="margin-bottom: 20px; font-weight: 600;">Featured Products</h2>
+        <div class="product-grid" id="product-list">
+            <!-- Dynamic JavaScript Content -->
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h3 style="margin-bottom: 15px;">Order & Payment Details</h3>
+            
+            <div id="cart-items-summary" style="margin-bottom: 15px; font-size: 0.9rem;"></div>
+            
+            <form id="order-form" onsubmit="handleOrder(event)">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" id="cust-name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label>Mobile Number *</label>
+                    <input type="tel" id="cust-phone" required pattern="[0-9]{10}" placeholder="10-digit phone number">
+                </div>
+                <div class="form-group">
+                    <label>Delivery Address (Anywhere in West Bengal) *</label>
+                    <textarea id="cust-address" required rows="3" placeholder="Village/Street, Post Office, District, Pincode"></textarea>
+                </div>
+                
+                <div class="qr-section">
+                    <p><strong>Pay via UPI / Scan QR:</strong></p>
+                    <p style="color: var(--accent); font-weight: bold; margin-top: 5px;">UPI ID: <code>yourname@upi</code></p>
+                    <img src="https://via.placeholder.com/180x180.png?text=Your+UPI+QR" alt="UPI QR Code">
+                    <p style="font-size: 0.8rem; color: #718096; margin-top: 6px;">After payment, enter your Transaction / Reference ID below</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Payment Method *</label>
+                    <select id="pay-method" required>
+                        <option value="Online UPI Payment">Online UPI / QR Code</option>
+                        <option value="Cash on Delivery">Cash on Delivery (COD)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Transaction ID (Optional for COD)</label>
+                    <input type="text" id="cust-txnid" placeholder="e.g. 4012xxxxxx">
+                </div>
+
+                <button type="submit" class="btn" style="background: var(--success);">Confirm Order via WhatsApp ➔</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Store Admin Mobile Setup
+        const ADMIN_PHONE = "919000000000"; // ⚠️ Replace with your 10-digit WhatsApp number (with 91)
+
+        // Unlimited Products List
+        const products = [
+            {
+                id: 1,
+                name: "Premium Saree / Product 1",
+                desc: "High quality material, smooth texture, and comfortable for all occasions.",
+                price: 499,
+                inStock: true, // Set to false if Out of Stock
+                image: "https://via.placeholder.com/300x230.png?text=Product+1"
+            },
+            {
+                id: 2,
+                name: "Designer Wear / Product 2",
+                desc: "100% genuine quality, long lasting material with modern styling.",
+                price: 899,
+                inStock: true,
+                image: "https://via.placeholder.com/300x230.png?text=Product+2"
+            },
+            {
+                id: 3,
+                name: "Limited Edition / Out of Stock Item",
+                desc: "Currently unavailable in inventory.",
+                price: 1299,
+                inStock: false,
+                image: "https://via.placeholder.com/300x230.png?text=Out+Of+Stock"
+            }
+        ];
+
+        let cart = [];
+
+        function renderProducts() {
+            const container = document.getElementById('product-list');
+            container.innerHTML = products.map(p => `
+                <div class="product-card">
+                    ${!p.inStock ? '<div class="badge-out">Out of Stock</div>' : ''}
+                    <img src="${p.image}" class="product-img" alt="${p.name}">
+                    <div class="product-details">
+                        <div class="product-title">${p.name}</div>
+                        <div class="product-desc">${p.desc}</div>
+                        <div class="product-price">₹ ${p.price}</div>
+                        ${p.inStock 
+                            ? `<button class="btn" onclick="addToCart(${p.id})">Order Now</button>`
+                            : `<button class="btn btn-disabled" disabled>Out of Stock</button>`
+                        }
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            cart = [product];
+            document.getElementById('cart-count').innerText = cart.length;
+            openCart();
+        }
+
+        function openCart() {
+            if(cart.length === 0) {
+                alert("Please select a product first.");
+                return;
+            }
+            const item = cart[0];
+            document.getElementById('cart-items-summary').innerHTML = `
+                <div style="background:#EDF2F7; padding:12px; border-radius:6px;">
+                    <strong>Selected Item:</strong> ${item.name}<br>
+                    <strong>Price:</strong> ₹ ${item.price}
+                </div>
+            `;
+            document.getElementById('checkout-modal').style.display = 'flex';
+        }
+
+        function closeCart() {
+            document.getElementById('checkout-modal').style.display = 'none';
+        }
+
+        function handleOrder(e) {
+            e.preventDefault();
+            const item = cart[0];
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const address = document.getElementById('cust-address').value;
+            const method = document.getElementById('pay-method').value;
+            const txn = document.getElementById('cust-txnid').value || 'N/A';
+
+            const message = `🛍️ *NEW ORDER - Multipurpose Pratishthan*%0A%0A` +
+                `*Item:* ${item.name}%0A` +
+                `*Price:* ₹ ${item.price}%0A%0A` +
+                `*Customer Details:*%0A` +
+                `👤 Name: ${name}%0A` +
+                `📞 Phone: ${phone}%0A` +
+                `📍 Address: ${address}%0A` +
+                `💳 Payment Method: ${method}%0A` +
+                `🧾 Txn ID: ${txn}`;
+
+            const whatsappUrl = `https://wa.me/${ADMIN_PHONE}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+            closeCart();
+        }
+
+        renderProducts();
+    </script>
+</body>
+</html>
