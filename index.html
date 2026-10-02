@@ -3,408 +3,662 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multipurpose Pratishthan - Official Store</title>
+    <title>Maa Tara Bastra Prothishan - Official Online Store</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary: #1A365D;
-            --accent: #2B6CB0;
-            --success: #2F855A;
-            --bg: #F7FAFC;
-            --text: #2D3748;
+            --primary-color: #2874f0; /* Premium Brand Blue */
+            --secondary-color: #fb641b; /* Action Orange */
+            --accent-color: #ff9f00; /* Gold Highlight */
+            --dark-color: #212121;
+            --light-bg: #f1f3f6;
+            --white: #ffffff;
+            --success-color: #388e3c;
+            --gray-text: #878787;
+            --border-color: #e0e0e0;
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            padding-bottom: 60px;
+            background-color: var(--light-bg);
+            color: var(--dark-color);
+            line-height: 1.5;
         }
 
-        /* Header Navigation */
+        /* ===== HEADER & NAVBAR ===== */
         header {
-            background: var(--primary);
-            color: white;
-            padding: 1rem 2rem;
+            background-color: var(--primary-color);
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .top-navbar {
+            max-width: 1350px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+        }
+
+        .brand-logo {
+            color: var(--white);
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-logo span {
+            color: var(--accent-color);
+            font-style: italic;
+            font-weight: 800;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 600px;
+            margin: 0 25px;
+            display: flex;
+            background: var(--white);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 11px 16px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            background: var(--white);
+            border: none;
+            padding: 0 20px;
+            color: var(--primary-color);
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .search-bar button:hover {
+            color: var(--secondary-color);
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-btn {
+            background: transparent;
+            color: var(--white);
+            border: none;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .cart-btn {
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 8px 18px;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .cart-btn:hover {
+            background: #f8f9fa;
+        }
+
+        .cart-badge {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 2px 7px;
+            border-radius: 50%;
+            font-size: 12px;
+        }
+
+        /* ===== CATEGORIES BAR ===== */
+        .categories-bar {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .categories-wrapper {
+            max-width: 1350px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 20px;
+            overflow-x: auto;
+        }
+
+        .category-item {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            transition: 0.2s;
+        }
+
+        .category-item:hover {
+            color: var(--primary-color);
+        }
+
+        .category-item i {
+            color: var(--primary-color);
+            font-size: 15px;
+        }
+
+        /* ===== HERO BANNER ===== */
+        .hero-banner {
+            max-width: 1350px;
+            margin: 20px auto;
+            background: linear-gradient(135deg, #0d47a1, #1976d2, #42a5f5);
+            border-radius: 10px;
+            padding: 50px 40px;
+            color: var(--white);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: var(--card-shadow);
         }
 
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+        .hero-content h1 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
         }
 
-        .cart-icon {
-            background: var(--accent);
-            padding: 8px 18px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background 0.2s;
-        }
-
-        .cart-icon:hover {
-            background: #3182CE;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 25px auto;
-            padding: 0 15px;
-        }
-
-        .notice-banner {
-            background: #EBF8FF;
-            border-left: 4px solid var(--accent);
-            padding: 12px 16px;
+        .hero-content p {
+            font-size: 18px;
             margin-bottom: 25px;
-            border-radius: 4px;
-            font-size: 0.95rem;
-            color: #2C5282;
+            opacity: 0.9;
         }
 
-        /* Product Grid */
-        .product-grid {
+        .btn-primary {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(251, 100, 27, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #e65100;
+            transform: translateY(-2px);
+        }
+
+        /* ===== PRODUCT SECTION ===== */
+        .main-container {
+            max-width: 1350px;
+            margin: 25px auto;
+            padding: 0 10px;
+        }
+
+        .section-header {
+            background: var(--white);
+            padding: 18px 24px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-header h2 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 25px;
+            gap: 20px;
+            background: var(--white);
+            padding: 24px;
+            border-radius: 0 0 8px 8px;
         }
 
+        /* ===== PRODUCT CARD ===== */
         .product-card {
-            background: white;
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
+            padding: 16px;
+            transition: 0.3s;
+            background: var(--white);
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             position: relative;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            box-shadow: var(--card-shadow);
+            border-color: transparent;
+            transform: translateY(-4px);
         }
 
-        .product-img {
-            width: 100%;
-            height: 230px;
-            object-fit: cover;
-            background: #EDF2F7;
-        }
-
-        .product-details {
-            padding: 18px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .product-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--primary);
-        }
-
-        .product-desc {
-            font-size: 0.88rem;
-            color: #718096;
-            margin-bottom: 12px;
-            line-height: 1.4;
-            flex-grow: 1;
-        }
-
-        .product-price {
-            font-size: 1.25rem;
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .btn {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            width: 100%;
-            font-size: 0.95rem;
-            transition: background 0.2s;
-        }
-
-        .btn:hover {
-            background: var(--primary);
-        }
-
-        .btn-disabled {
-            background: #A0AEC0;
-            cursor: not-allowed;
-        }
-
-        .badge-out {
+        .badge {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #E53E3E;
-            color: white;
-            padding: 4px 10px;
-            font-size: 0.75rem;
-            border-radius: 4px;
+            top: 12px;
+            left: 12px;
+            background: var(--success-color);
+            color: var(--white);
+            font-size: 11px;
             font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 3px;
             text-transform: uppercase;
         }
 
-        /* Modal Overlay */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 200;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 500px;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .close-btn {
-            float: right;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #718096;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 6px;
-            font-size: 0.88rem;
-            font-weight: 600;
-        }
-
-        .form-group input, .form-group textarea, .form-group select {
+        .product-image {
             width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #CBD5E0;
+            height: 230px;
+            object-fit: cover;
             border-radius: 6px;
-            font-size: 0.95rem;
+            margin-bottom: 14px;
         }
 
-        .qr-section {
+        .product-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-color);
+            line-height: 1.3;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .rating-box {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .rating-badge {
+            background: var(--success-color);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .rating-count {
+            font-size: 12px;
+            color: var(--gray-text);
+        }
+
+        .price-container {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .current-price {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--dark-color);
+        }
+
+        .original-price {
+            font-size: 14px;
+            color: var(--gray-text);
+            text-decoration: line-through;
+        }
+
+        .discount-percentage {
+            color: var(--success-color);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .card-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .add-to-cart-btn {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+        }
+
+        .add-to-cart-btn:hover {
+            background: #e69000;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: var(--white);
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+            text-decoration: none;
             text-align: center;
-            background: #F7FAFC;
-            padding: 15px;
-            border: 1px dashed #CBD5E0;
-            border-radius: 8px;
-            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 13px;
         }
 
-        .qr-section img {
-            max-width: 180px;
-            margin-top: 10px;
-            border-radius: 6px;
+        .whatsapp-btn:hover {
+            background: #1eb954;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #172337;
+            color: var(--white);
+            padding: 50px 20px 20px;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            max-width: 1350px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            font-size: 14px;
+            color: var(--gray-text);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #283547;
+            font-size: 13px;
+            color: var(--gray-text);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .top-navbar {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .search-bar {
+                width: 100%;
+                margin: 0;
+            }
+            .hero-banner {
+                padding: 30px 20px;
+            }
+            .hero-content h1 {
+                font-size: 26px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
-        <div class="logo">Multipurpose Pratishthan</div>
-        <div class="cart-icon" onclick="openCart()">
-            🛒 Cart (<span id="cart-count">0</span>)
+        <div class="top-navbar">
+            <a href="#" class="brand-logo">
+                <i class="fa-solid fa-bag-shopping"></i> MAA TARA <span>BASTRA PROTHISHAN</span>
+            </a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search for Sarees, Kurtis, Menswear & more...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="user-actions">
+                <a href="#" class="nav-btn"><i class="fa-solid fa-user"></i> Login</a>
+                <button class="nav-btn cart-btn" onclick="openCart()">
+                    <i class="fa-solid fa-cart-shopping"></i> Cart
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <div class="container">
-        <div class="notice-banner">
-            🚚 <strong>Delivery Notice:</strong> We deliver across all locations in West Bengal via Online Payment & Cash on Delivery.
+    <!-- Categories Bar -->
+    <nav class="categories-bar">
+        <div class="categories-wrapper">
+            <a href="#" class="category-item"><i class="fa-solid fa-shirt"></i> Saree Collection</a>
+            <a href="#" class="category-item"><i class="fa-solid fa-person-dress"></i> Kurtis & Lehengas</a>
+            <a href="#" class="category-item"><i class="fa-solid fa-user-tie"></i> Menswear</a>
+            <a href="#" class="category-item"><i class="fa-solid fa-child-dress"></i> Kids Clothing</a>
+            <a href="#" class="category-item"><i class="fa-solid fa-fire"></i> Festival Offers</a>
         </div>
+    </nav>
 
-        <h2 style="margin-bottom: 20px; font-weight: 600;">Featured Products</h2>
-        <div class="product-grid" id="product-list">
-            <!-- Dynamic JavaScript Content -->
-        </div>
-    </div>
-
-    <!-- Checkout Modal -->
-    <div class="modal" id="checkout-modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeCart()">&times;</span>
-            <h3 style="margin-bottom: 15px;">Order & Payment Details</h3>
-            
-            <div id="cart-items-summary" style="margin-bottom: 15px; font-size: 0.9rem;"></div>
-            
-            <form id="order-form" onsubmit="handleOrder(event)">
-                <div class="form-group">
-                    <label>Full Name *</label>
-                    <input type="text" id="cust-name" required placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                    <label>Mobile Number *</label>
-                    <input type="tel" id="cust-phone" required pattern="[0-9]{10}" placeholder="10-digit phone number">
-                </div>
-                <div class="form-group">
-                    <label>Delivery Address (Anywhere in West Bengal) *</label>
-                    <textarea id="cust-address" required rows="3" placeholder="Village/Street, Post Office, District, Pincode"></textarea>
-                </div>
-                
-                <div class="qr-section">
-                    <p><strong>Pay via UPI / Scan QR:</strong></p>
-                    <p style="color: var(--accent); font-weight: bold; margin-top: 5px;">UPI ID: <code>yourname@upi</code></p>
-                    <img src="https://via.placeholder.com/180x180.png?text=Your+UPI+QR" alt="UPI QR Code">
-                    <p style="font-size: 0.8rem; color: #718096; margin-top: 6px;">After payment, enter your Transaction / Reference ID below</p>
-                </div>
-
-                <div class="form-group">
-                    <label>Payment Method *</label>
-                    <select id="pay-method" required>
-                        <option value="Online UPI Payment">Online UPI / QR Code</option>
-                        <option value="Cash on Delivery">Cash on Delivery (COD)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Transaction ID (Optional for COD)</label>
-                    <input type="text" id="cust-txnid" placeholder="e.g. 4012xxxxxx">
-                </div>
-
-                <button type="submit" class="btn" style="background: var(--success);">Confirm Order via WhatsApp ➔</button>
-            </form>
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+        <div class="hero-content">
+            <h1>Exclusive Festive Clothing Collection</h1>
+            <p>Get premium quality traditional & modern wear at best discounted prices.</p>
+            <a href="#featured-products" class="btn-primary">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </div>
 
+    <!-- Main Products Showcase -->
+    <div class="main-container" id="featured-products">
+        <div class="section-header">
+            <h2>🔥 Trending Collections</h2>
+            <a href="#" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 14px;">View All</a>
+        </div>
+
+        <div class="products-grid">
+
+            <!-- Product 1 -->
+            <div class="product-card">
+                <span class="badge">Best Seller</span>
+                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=500&q=80" alt="Saree" class="product-image">
+                <div class="product-title">Royal Designer Banarasi Silk Saree (Blue)</div>
+                <div class="rating-box">
+                    <span class="rating-badge">4.8 <i class="fa-solid fa-star"></i></span>
+                    <span class="rating-count">(1,240 Ratings)</span>
+                </div>
+                <div class="price-container">
+                    <span class="current-price">₹2,499</span>
+                    <span class="original-price">₹4,999</span>
+                    <span class="discount-percentage">50% OFF</span>
+                </div>
+                <div class="card-buttons">
+                    <button class="add-to-cart-btn" onclick="addToCart('Banarasi Silk Saree')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                    <a href="https://wa.me/?text=Hi,%20I%20want%20to%20buy%20Royal%20Designer%20Banarasi%20Silk%20Saree" target="_blank" class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <span class="badge">New Arrival</span>
+                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80" alt="Kurti" class="product-image">
+                <div class="product-title">Premium Printed Cotton Anarkali Kurti</div>
+                <div class="rating-box">
+                    <span class="rating-badge">4.5 <i class="fa-solid fa-star"></i></span>
+                    <span class="rating-count">(850 Ratings)</span>
+                </div>
+                <div class="price-container">
+                    <span class="current-price">₹899</span>
+                    <span class="original-price">₹1,799</span>
+                    <span class="discount-percentage">50% OFF</span>
+                </div>
+                <div class="card-buttons">
+                    <button class="add-to-cart-btn" onclick="addToCart('Cotton Anarkali Kurti')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                    <a href="https://wa.me/?text=Hi,%20I%20want%20to%20buy%20Cotton%20Anarkali%20Kurti" target="_blank" class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <span class="badge">Trending</span>
+                <img src="https://images.unsplash.com/photo-1597983073493-88cd35cf03b0?auto=format&fit=crop&w=500&q=80" alt="Menswear" class="product-image">
+                <div class="product-title">Traditional Cotton Kurta Pajama Set</div>
+                <div class="rating-box">
+                    <span class="rating-badge">4.7 <i class="fa-solid fa-star"></i></span>
+                    <span class="rating-count">(530 Ratings)</span>
+                </div>
+                <div class="price-container">
+                    <span class="current-price">₹1,299</span>
+                    <span class="original-price">₹2,499</span>
+                    <span class="discount-percentage">47% OFF</span>
+                </div>
+                <div class="card-buttons">
+                    <button class="add-to-cart-btn" onclick="addToCart('Kurta Pajama Set')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                    <a href="https://wa.me/?text=Hi,%20I%20want%20to%20buy%20Kurta%20Pajama%20Set" target="_blank" class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <span class="badge">Special Offer</span>
+                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80" alt="Lehenga" class="product-image">
+                <div class="product-title">Partywear Embroidered Lehenga Choli</div>
+                <div class="rating-box">
+                    <span class="rating-badge">4.9 <i class="fa-solid fa-star"></i></span>
+                    <span class="rating-count">(2,100 Ratings)</span>
+                </div>
+                <div class="price-container">
+                    <span class="current-price">₹3,999</span>
+                    <span class="original-price">₹7,999</span>
+                    <span class="discount-percentage">50% OFF</span>
+                </div>
+                <div class="card-buttons">
+                    <button class="add-to-cart-btn" onclick="addToCart('Lehenga Choli')"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                    <a href="https://wa.me/?text=Hi,%20I%20want%20to%20buy%20Lehenga%20Choli" target="_blank" class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>ABOUT</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Store Location</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>HELP</h4>
+                <ul>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Cancellation & Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>POLICY</h4>
+                <ul>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>CONNECT WITH US</h4>
+                <ul>
+                    <li><a href="#">WhatsApp Support</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Maa Tara Bastra Prothishan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
     <script>
-        // Store Admin Mobile Setup
-        const ADMIN_PHONE = "919000000000"; // ⚠️ Replace with your 10-digit WhatsApp number (with 91)
-
-        // Unlimited Products List
-        const products = [
-            {
-                id: 1,
-                name: "Premium Saree / Product 1",
-                desc: "High quality material, smooth texture, and comfortable for all occasions.",
-                price: 499,
-                inStock: true, // Set to false if Out of Stock
-                image: "https://via.placeholder.com/300x230.png?text=Product+1"
-            },
-            {
-                id: 2,
-                name: "Designer Wear / Product 2",
-                desc: "100% genuine quality, long lasting material with modern styling.",
-                price: 899,
-                inStock: true,
-                image: "https://via.placeholder.com/300x230.png?text=Product+2"
-            },
-            {
-                id: 3,
-                name: "Limited Edition / Out of Stock Item",
-                desc: "Currently unavailable in inventory.",
-                price: 1299,
-                inStock: false,
-                image: "https://via.placeholder.com/300x230.png?text=Out+Of+Stock"
-            }
-        ];
-
-        let cart = [];
-
-        function renderProducts() {
-            const container = document.getElementById('product-list');
-            container.innerHTML = products.map(p => `
-                <div class="product-card">
-                    ${!p.inStock ? '<div class="badge-out">Out of Stock</div>' : ''}
-                    <img src="${p.image}" class="product-img" alt="${p.name}">
-                    <div class="product-details">
-                        <div class="product-title">${p.name}</div>
-                        <div class="product-desc">${p.desc}</div>
-                        <div class="product-price">₹ ${p.price}</div>
-                        ${p.inStock 
-                            ? `<button class="btn" onclick="addToCart(${p.id})">Order Now</button>`
-                            : `<button class="btn btn-disabled" disabled>Out of Stock</button>`
-                        }
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function addToCart(id) {
-            const product = products.find(p => p.id === id);
-            cart = [product];
-            document.getElementById('cart-count').innerText = cart.length;
-            openCart();
+        let cartCount = 0;
+        function addToCart(item) {
+            cartCount++;
+            document.getElementById('cart-count').innerText = cartCount;
+            alert(item + ' has been added to your cart successfully!');
         }
 
         function openCart() {
-            if(cart.length === 0) {
-                alert("Please select a product first.");
-                return;
+            if(cartCount === 0) {
+                alert('Your cart is empty. Add items to view cart.');
+            } else {
+                alert('You have ' + cartCount + ' item(s) in your cart.');
             }
-            const item = cart[0];
-            document.getElementById('cart-items-summary').innerHTML = `
-                <div style="background:#EDF2F7; padding:12px; border-radius:6px;">
-                    <strong>Selected Item:</strong> ${item.name}<br>
-                    <strong>Price:</strong> ₹ ${item.price}
-                </div>
-            `;
-            document.getElementById('checkout-modal').style.display = 'flex';
         }
-
-        function closeCart() {
-            document.getElementById('checkout-modal').style.display = 'none';
-        }
-
-        function handleOrder(e) {
-            e.preventDefault();
-            const item = cart[0];
-            const name = document.getElementById('cust-name').value;
-            const phone = document.getElementById('cust-phone').value;
-            const address = document.getElementById('cust-address').value;
-            const method = document.getElementById('pay-method').value;
-            const txn = document.getElementById('cust-txnid').value || 'N/A';
-
-            const message = `🛍️ *NEW ORDER - Multipurpose Pratishthan*%0A%0A` +
-                `*Item:* ${item.name}%0A` +
-                `*Price:* ₹ ${item.price}%0A%0A` +
-                `*Customer Details:*%0A` +
-                `👤 Name: ${name}%0A` +
-                `📞 Phone: ${phone}%0A` +
-                `📍 Address: ${address}%0A` +
-                `💳 Payment Method: ${method}%0A` +
-                `🧾 Txn ID: ${txn}`;
-
-            const whatsappUrl = `https://wa.me/${ADMIN_PHONE}?text=${message}`;
-            window.open(whatsappUrl, '_blank');
-            closeCart();
-        }
-
-        renderProducts();
     </script>
 </body>
 </html>
